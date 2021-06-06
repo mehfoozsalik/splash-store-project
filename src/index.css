@@ -5,7 +5,7 @@ Fonts
 */
 
 @import url('https://fonts.googleapis.com/css2?family=Tangerine:wght@700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow&display=swap');
 
 /* 
 ====== 
@@ -17,7 +17,7 @@ Variables
   /* --primaryDarkColor: #4e1d51; */
   --primaryColor: #002d9e;
   --primaryDarkColor: rgb(0, 23, 79);
-  --primaryFont: 'Gill Sans MT';
+  --primaryFont: 'Barlow';
   --slantedFont: 'Tangerine';
   --mainWhite: #fff;
   --offWhite: #f7f7f7;
@@ -26,7 +26,7 @@ Variables
   --mainBlack: #222;
   --mainGrey: #eeeeee;
   --darkGrey: #b6b6b6;
-  --main: #88edff;
+  --main: rgb(248, 166, 166);
   --mainTransition: all 0.3s linear;
   --mainSpacing: 0.1rem;
   --lightShadow: 1px 1px 10px rgba(0, 23, 79, 0.377);
@@ -203,7 +203,7 @@ Hero
   min-height: calc(65vh);
   background: linear-gradient(
       to right,
-      rgba(0, 0, 0, 0.719) 40%,
+      rgba(0, 0, 0, 0.8),
       rgba(255, 255, 255, 0)
     ),
     url('./assets/mainBcg.jpeg') center/cover no-repeat;
@@ -312,43 +312,35 @@ Product List
   column-gap: 1.8rem;
   row-gap: 1.8rem;
 }
-
-.products-center::before {
-  content: ' ';
-  position: absolute;
-  top: 0%;
-  left: 0%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(#52b6fe, #6154fe);
-  transform: translateY(40px) scale(0.9);
-  z-index: -1;
-  filter: blur(25px);
-  opacity: 0.1;
-}
-
 .product {
   display: grid;
-  background: var(--mainWhite);
-  margin-bottom: 2rem;
+  background: rgba(255, 255, 255, 0);
+  margin-bottom: auto;
   box-shadow: var(--lightShadow);
   transition: var(--mainTransition);
   grid-template-rows: auto 1fr;
   border-radius: 0.5em;
+  position: relative;
 }
+
 .product:hover {
   box-shadow: var(--darkShadow);
 }
 .img-container {
-  padding: 1rem;
-  background: rgba(255, 255, 255, 0.5);
+  padding: 0.5rem;
+  max-height: 19rem;
+  border-radius: 0.5em;
   position: relative;
+
   /* height: 5rem; */
 }
 
 .product img {
   transition: var(--mainTransition);
   min-height: 9rem;
+  max-height: 18rem;
+  object-fit: cover;
+  object-fit: cover;
 }
 
 .product:hover img {
@@ -371,6 +363,8 @@ Product List
   letter-spacing: var(--mainSpacing);
   display: grid;
   grid-template-rows: 1fr auto;
+  background-color: white 0%;
+  position: relative;
 }
 .product-title {
   text-transform: uppercase;
@@ -405,7 +399,10 @@ Single Product
   align-self: center;
   margin: 0 auto;
   margin-bottom: 2rem;
+  border-radius: 0.5rem;
+  position: relative;
 }
+
 .single-product h1 {
   text-transform: capitalize;
   font-size: 2.3rem;
@@ -418,13 +415,25 @@ Single Product
   line-height: 2;
   letter-spacing: 1px;
 }
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 700px) {
   .single-product {
     display: grid;
     grid-template-columns: 2fr 3fr;
     column-gap: 3rem;
   }
+  .product {
+    min-height: 9rem;
+    max-height: 20rem;
+    object-fit: cover;
+  }
+  .product img {
+    transition: var(--mainTransition);
+    min-height: 9rem;
+    max-height: 10rem;
+    object-fit: cover;
+  }
 }
+
 /* 
 ====== 
 Cart
@@ -575,22 +584,23 @@ Login Button
 .login-btn {
   text-transform: capitalize;
   background: transparent;
-  display: inline-block;
   border: none;
   cursor: pointer;
   font-family: var(--primaryFont);
-  margin: 0 0.25rem;
-  font-size: 0.85rem;
-  letter-spacing: 2px;
+  font-size: 1rem;
+  letter-spacing: 1px;
   transition: var(--mainTransition);
   font-weight: 300;
+  align-content: center;
+  margin: 0 0.5rem;
+  display: contents;
 }
 .login-btn:hover {
   color: var(--primaryColor);
 }
 @media screen and (min-width: 768px) {
   .login-btn {
-    font-size: 1.5rem;
+    font-size: 1rem;
     margin: 0 0.5rem;
   }
 }
@@ -682,6 +692,7 @@ Scroll Button
 */
 .scroll-btn {
   position: fixed;
+  border-radius: 50%;
   right: 1.5rem;
   bottom: 1.5rem;
   background: var(--mainBlack);
@@ -691,13 +702,17 @@ Scroll Button
   transition: var(--mainTransition);
   font-size: 2rem;
   line-height: 0;
-  padding: 0.3rem 0.5rem;
+  padding: 0.4rem 0.5rem;
   cursor: pointer;
 }
 .show-scroll-btn {
   z-index: 100;
   opacity: 1;
 }
+.scroll-btn:hover {
+  box-shadow: var(--darkShadow);
+}
+
 /* 
 ====== 
 Pagination Buttons
@@ -712,6 +727,7 @@ Pagination Buttons
 }
 
 .pagination-buttons {
+  margin-top: 3rem;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -816,4 +832,12 @@ Filters Section
   margin-top: 8rem;
   font-size: 1.1rem;
   padding: 0 2rem;
+}
+.icons {
+  margin-left: 1rem;
+  font-size: 1.8rem;
+  margin-right: 0.2rem;
+}
+.iconslink {
+  display: contents;
 }

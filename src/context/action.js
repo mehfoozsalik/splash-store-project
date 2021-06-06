@@ -1,0 +1,5 @@
+export const REMOVE = 'REMOVE'
+export const INCREASE = 'INCREASE'
+export const DECREASE = 'DECREASE'
+export const ADDTOCARD = 'ADDTOCARD'
+export const CLEARCARD = 'CLEARCARD'

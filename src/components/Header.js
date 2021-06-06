@@ -1,6 +1,6 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
-import logo from '../assets/logo.svg'
+
 import CartLink from './Cart/CartLink'
 import { UserContext } from '../context/user'
 import LoginLink from '../components/LoginLink'
