@@ -26,7 +26,7 @@ Variables
   --mainBlack: #222;
   --mainGrey: #eeeeee;
   --darkGrey: #b6b6b6;
-  --main: rgb(248, 166, 166);
+  --main: linear-gradient(to bottom, rgb(255, 241, 241), rgb(255, 184, 184));
   --mainTransition: all 0.3s linear;
   --mainSpacing: 0.1rem;
   --lightShadow: 1px 1px 10px rgba(0, 23, 79, 0.377);
@@ -176,10 +176,10 @@ Header
 }
 
 .header a {
-  text-shadow: var(--darkShadow);
+  text-shadow: 2px 2px 14px rgb(255, 255, 255);
   text-transform: capitalize;
   margin: 0 0.25rem;
-  font-size: 0.95rem;
+  font-size: 1rem;
   letter-spacing: 2px;
   transition: var(--mainTransition);
 }
@@ -203,14 +203,15 @@ Hero
   min-height: calc(65vh);
   background: linear-gradient(
       to right,
-      rgba(0, 0, 0, 0.8),
+      rgba(0, 0, 0, 0.9),
+      rgba(0, 0, 0, 0.65),
       rgba(255, 255, 255, 0)
     ),
     url('./assets/mainBcg.jpeg') center/cover no-repeat;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: var(--main);
+  color: rgb(255, 232, 232);
 }
 .banner {
   width: var(--smallWidth);
@@ -830,14 +831,11 @@ Filters Section
 }
 .search-errors {
   margin-top: 8rem;
-  font-size: 1.1rem;
+  font-size: 1.5rem;
   padding: 0 2rem;
 }
 .icons {
-  margin-left: 1rem;
-  font-size: 1.8rem;
+  margin-left: 0.3rem;
+  font-size: 1.5rem;
   margin-right: 0.2rem;
-}
-.iconslink {
-  display: contents;
 }

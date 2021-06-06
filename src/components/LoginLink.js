@@ -16,15 +16,14 @@ export default function LoginLink() {
           clearCart()
         }}
       >
-        <BiLogOut className='icons' /> LogOut
+        <BiLogOut className='icons' />
       </button>
     )
   }
 
   return (
-    <Link to='/login' className='iconslink'>
+    <Link to='/login'>
       <BiLogIn className='icons' />
-      LogIn
     </Link>
   )
 }
